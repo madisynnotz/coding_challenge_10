@@ -61,3 +61,18 @@ class Inventory {
     listProducts() {
         this.products.forEach(product => console.log(product.getDetails()));
     }
+
+// Task 4: Implementing Order Management
+
+placeOrder(orderId, product, quantity) {
+    if (product.stock >= quantity) {
+        const order = new Order(orderId, product, quantity);
+        this.orders.push(order);
+    } else {
+        console.log("Not enough stock to fulfill the order.");
+    }
+}
+
+listOrders() {
+    this.orders.forEach(order => console.log(order.getOrderDetails()));
+}
