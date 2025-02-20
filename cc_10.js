@@ -76,3 +76,26 @@ placeOrder(orderId, product, quantity) {
 listOrders() {
     this.orders.forEach(order => console.log(order.getOrderDetails()));
 }
+
+// Task 5: Implementing Product Restocking
+
+restockProduct(productId, quantity) {
+    const product = this.products.find(p => p.id === productId);
+    if (product) {
+        product.stock += quantity;
+    } else {
+        console.log("Product not found.");
+    }
+}
+}
+
+const inventory = new Inventory();
+inventory.addProduct(prod1);
+inventory.listProducts();
+
+inventory.placeOrder(601, prod1, 2);
+inventory.listOrders();
+console.log(prod1.getDetails());
+
+inventory.restockProduct(101, 5);
+console.log(prod1.getDetails());
