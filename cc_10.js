@@ -1,6 +1,6 @@
 // Task 1: Creating a Product Class
 
-class Product {
+class Product { // create class product 
     constructor(name, id, price, stock) {
         this.name = name;
         this.id = id;
@@ -8,11 +8,11 @@ class Product {
         this.stock = stock;
     }
 
-    getDetails() {
+    getDetails() { // adding get details
         return `Product: ${this.name}, ID: ${this.id}, Price: $${this.price}, Stock: ${this.stock}`;
     }
 
-    updateStock(quantity) {
+    updateStock(quantity) { // adding update stock
         if (this.stock >= quantity) {
             this.stock -= quantity;
         } else {
@@ -21,14 +21,14 @@ class Product {
     }
 }
 
-const prod1 = new Product("Laptop", 101, 1200, 10);
+const prod1 = new Product("Laptop", 101, 1200, 10); // a test case
 console.log(prod1.getDetails());
 prod1.updateStock(3);
 console.log(prod1.getDetails());
 
 // Task 2: Creating an Order Class
 
-class Order {
+class Order { // create class 
     constructor(orderId, product, quantity) {
         this.orderId = orderId;
         this.product = product;
@@ -37,7 +37,7 @@ class Order {
         product.updateStock(quantity);
     }
 
-    getOrderDetails() {
+    getOrderDetails() { // adding getorderdetails 
         return `Order ID: ${this.orderId}, Product: ${this.product.name}, Quantity: ${this.quantity}, Total Price: $${this.totalPrice}`;
     }
 }
@@ -50,8 +50,8 @@ console.log(prod1.getDetails());
 
 class Inventory {
     constructor() {
-        this.products = [];
-        this.orders = [];
+        this.products = []; // empty product array 
+        this.orders = []; // orders array
     }
 
     addProduct(product) {
